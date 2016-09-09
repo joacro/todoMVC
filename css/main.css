@@ -1,0 +1,38 @@
+.checkedTodos {
+  text-decoration: line-through;
+}
+
+.uncheckedTodos {
+  text-decoration: underline;
+}
+
+#newTodoInput {
+  background-color: #c0c0c0;
+  height: 40px;
+  font-size: 28px;
+  font-family: monospace;
+  color: blue;
+
+}
+
+.todoBox {
+  margin: 100px 450px auto 450px;
+  text-align: center;
+  padding: 70px;
+}
+
+.todoElements{
+  text-align: left;
+  margin-left: 80px;
+}
+
+#todoElement{
+  font-size: 24px;
+  color: blue;
+  font-family: monospace;
+}
+
+.urgentCheckbox {
+  color: red;
+  font-size: 24px;
+}

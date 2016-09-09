@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="todoMVC">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="js/angular.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container" ng-controller="TodoController as todoC">
+      <h1>
+        Todolist
+      </h1>
+      <form name="form" ng-submit="todoC.addTodo()">
+        <input id="newTodoInput" type="text" name="newTodo" placeholder="Write here" ng-model="todoC.newTodo" required/>
+        <span class="urgentCheckbox">
+          <input id="urgentCheckbox" type="checkbox" ng-model="todoC.urgent">!
+        </span>
+        <button ng-disabled="form.$invalid">
+          Add todo
+        </button>
+
+      </form>
+      <button ng-click="todoC.removeCompleted()">
+          Remove selected todos
+      </button>
+      <button ng-click="todoC.removeAll()">
+          Remove all
+      </button>
+      <div class="todoElements" ng-repeat="todo in todoC.todos">
+          <input type="checkbox" ng-model="todo.done"/>
+          <span id="todoElement" ng-class="{'checkedTodos':todo.done}" ng-style="todo.urgent ? {'color':'red'} : {'color':'green'}">
+            {{ todo.name }}
+            <br>
+          </span>
+      </div>
+    </div>
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/TodoController.js"></script>
+  </body>
+</html>
