@@ -1,0 +1,7 @@
+<div class="todoElements" ng-repeat="todo in todoC.todos">
+    <input type="checkbox" ng-model="todo.done"/>
+    <span id="todoElement" ng-class="{'checkedTodos':todo.done}" ng-style="todo.urgent ? {'color':'red'} : {'color':'green'}">
+      {{ todo.name }}
+      <br>
+    </span>
+</div>

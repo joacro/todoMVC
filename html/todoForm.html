@@ -1,0 +1,9 @@
+<form name="form" ng-submit="todoC.addTodo()">
+  <input id="newTodoInput" type="text" name="newTodo" placeholder="Write here" ng-model="todoC.newTodo" required/>
+  <span class="urgentCheckbox">
+    <input id="urgentCheckbox" type="checkbox" ng-model="todoC.urgent">!
+  </span>
+  <button ng-disabled="form.$invalid">
+    Add todo
+  </button>
+</form>
